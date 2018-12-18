@@ -75,3 +75,29 @@ ax1.set_ylabel("Probability")
 ax1.set_title("Beta-Binomial distribution")
 plt.show()
 ```
+
+```
+<문제 1번>
+
+# 프로그래밍을 위한 모듈을 임포트 한다.
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 시스템 신뢰도를 계산하기 위한 함수를 정의한다.
+def Reliability(p):
+    R = 2*(p**5) -5*(p**4) + 2*(p**3) +2*(p**2) # **는 제곱연산을 의미한다.
+    return R
+
+p_list = np.linspace(0,1,1000) # 0과 1사이를 1000등분하여 값을 생성한 후 list에 저장한다. 구성요소의 신뢰도 값을 의미함.
+R_holder = [] # 시스템의 신뢰도를 저장하기 위한 홀더를 정의해준다.
+
+for p in p_list:
+    R_holder.append(Reliability(p)) # 구성요소의 신뢰도 값을 넣어서 시스템의 신뢰도를 계산한 후, 위의 홀더에 저장한다.
+
+# X축을 구성요소의 신뢰도 값, y축을 시스템의 신뢰도 값으로 하여 그래프를 작성한다.
+plt.plot(p_list, R_holder)
+plt.xlabel("component reliability")
+plt.ylabel("system reliability")
+plt.title("HW_1")
+plt.show()
+```
