@@ -76,7 +76,7 @@ ax1.set_title("Beta-Binomial distribution")
 plt.show()
 ```
 
-```
+```python
 <문제 1번>
 
 # 프로그래밍을 위한 모듈을 임포트 한다.
