@@ -2,6 +2,8 @@
 ```python
 <그래프 그리는데 필요한 모듈을 임포트한다.>
 
+Heat_map_4 = make_l2(self.Cycle_DE(self.Cycle_En(X, False), False), X)
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.special import comb
