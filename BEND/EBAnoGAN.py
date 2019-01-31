@@ -23,8 +23,6 @@ class PVAE:
             net = leaky(bn(conv(net, self.depth[1], 3, 2, name = "conv_2"), phase, "bn_2"))
             net = leaky(bn(conv(net, self.depth[2], 3, 2, name = "conv_3"), phase, "bn_3"))
             net = leaky(bn(conv(net, self.depth[3], 3, 2, name = "conv_4"), phase, "bn_4"))
-            self.acts_gH = net.get_shape().as_list()[1]
-            self.acts_gW = net.get_shape().as_list()[2]
             net = tf.layers.flatten(net, name = "flatten")
             mean = dense(net, self.conf.n_z, name = "mean")
             std = tf.nn.softplus(dense(net, self.conf.n_z, name = "std")) + 1e-6
@@ -75,4 +73,4 @@ class PVAE:
         s_loss = Recon_loss + KL_Div
         
         return s_loss
-        
+       
