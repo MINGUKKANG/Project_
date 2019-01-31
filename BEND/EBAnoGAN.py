@@ -45,7 +45,7 @@ class PVAE:
 
         return X_out
 
-    def build_model(self, X, phase):
+    def build_model(self, X, X_noised, phase):
 
         ### 1.PVAE Generator ###
 
